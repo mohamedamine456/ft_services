@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:22:06 by mlachheb          #+#    #+#              #
-#    Updated: 2020/12/29 17:07:10 by mlachheb         ###   ########.fr        #
+#    Updated: 2020/12/30 12:22:39 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,3 +21,5 @@ touch /run/openrc/softlevel;
 apk add mysql mysql-client;
 
 /etc/init.d/mariadb setup;
+
+mv /mariadb-server.cnf /etc/my.cnf.d/mariadb-server.cnf;

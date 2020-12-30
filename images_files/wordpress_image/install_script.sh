@@ -37,6 +37,7 @@ cd /usr/share/ && mkdir webapps && cd webapps;
 wget http://wordpress.org/latest.tar.gz;
 tar -zxvf latest.tar.gz;
 rm latest.tar.gz;
+mv /wp-config.php wp-config.php;
 
 chown -R www:www /usr/share/webapps/;
 ln -s /usr/share/webapps/wordpress /www/wordpress;

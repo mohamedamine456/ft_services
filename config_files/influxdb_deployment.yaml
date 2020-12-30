@@ -18,6 +18,8 @@ kind: PersistentVolumeClaim
 
 metadata:
     name: influxdb-pvc
+    labels:
+        database: influxdb
 spec:
     accessModes:
         - ReadWriteOnce
@@ -40,10 +42,6 @@ spec:
             labels:
                 database: influxdb
         spec:
-            volumes:
-                - name: database-storage
-                  persistentVolumeClaim:
-                      claimName: database-pvc
             containers:
                 - name: image-influxdb
                   image: image-influxdb
