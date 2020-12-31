@@ -6,15 +6,17 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:08:21 by mlachheb          #+#    #+#              #
-#    Updated: 2020/12/29 16:03:47 by mlachheb         ###   ########.fr        #
+#    Updated: 2020/12/31 16:57:19 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-apk add --no-cache nginx openssl;
+apk add --no-cache nginx;
 
 adduser -D -g 'www' www;
 
 mkdir /www;
+
+apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/;
 
 chown -R www:www /var/lib/nginx;
 chown -R www:www /www;

@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:16:39 by mlachheb          #+#    #+#              #
-#    Updated: 2020/12/29 15:59:04 by mlachheb         ###   ########.fr        #
+#    Updated: 2020/12/31 16:57:44 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ COPY nginx.conf .
 COPY index.html .
 COPY nginx-selfsigned.crt nginx-selfsigned.crt
 COPY nginx-selfsigned.key nginx-selfsigned.key
+COPY telegraf.conf .
 
 RUN sh install_script.sh
 
