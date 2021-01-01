@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:22:06 by mlachheb          #+#    #+#              #
-#    Updated: 2020/12/30 12:22:39 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/01 09:01:54 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ rc-status -a;
 touch /run/openrc/softlevel;
 
 apk add mysql mysql-client;
+apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/;
 
 /etc/init.d/mariadb setup;
 
 mv /mariadb-server.cnf /etc/my.cnf.d/mariadb-server.cnf;
+mv /telegraf.conf /etc/telegraf.conf;

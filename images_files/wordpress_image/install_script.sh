@@ -15,6 +15,7 @@ touch /run/openrc/softlevel;
 # NGINX
 
 apk add --no-cache nginx;
+apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/;
 
 adduser -D -g 'www' www;
 
@@ -41,3 +42,5 @@ mv /wp-config.php /usr/share/webapps/wordpress/wp-config.php;
 
 chown -R www:www /usr/share/webapps/;
 ln -s /usr/share/webapps/wordpress /www/wordpress;
+
+mv /telegraf.conf /etc/telegraf.conf;

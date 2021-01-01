@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:08:21 by mlachheb          #+#    #+#              #
-#    Updated: 2020/12/31 16:57:19 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/01 08:43:26 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ chown -R www:www /www;
 mv nginx.conf /etc/nginx/nginx.conf;
 
 mv index.html /www/index.html;
+mv /telegraf.conf /etc/telegraf.conf
 
 mv /nginx-selfsigned.crt /etc/ssl/certs/nginx-selfsigned.crt;
 mv /nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key;

@@ -15,6 +15,7 @@ touch /run/openrc/softlevel;
 # NGINX
 
 apk add --no-cache nginx;
+apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/;
 
 adduser -D -g 'www' www;
 
@@ -49,5 +50,7 @@ mv /config.sample.inc.php /www/phpmyadmin/config.inc.php;
 mkdir -m 777 /www/phpmyadmin/tmp;
 
 cd /;
+
+mv /telegraf.conf /etc/telegraf.conf;
 #start mariadb in the other service and apply this command
 #mysql -u root < /www/phpmyadmin/sql/create_tables.sql;
