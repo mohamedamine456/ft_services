@@ -39,16 +39,9 @@ spec:
             labels:
                 database: mysql
         spec:
-            #volumes:
-            #   - name: mysql-storage
-            #     persistentVolumeClaim:
-            #         claimName: mysql-pvc
             containers:
                 - name: image-mysql
                   image: image-mysql
                   imagePullPolicy: Never
                   ports:
                       - containerPort: 3306
-                        #     volumeMounts:
-                        # - name: mysql-storage
-                        #mountPath: /var/lib/mysql
