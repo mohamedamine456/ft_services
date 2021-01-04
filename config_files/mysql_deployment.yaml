@@ -9,6 +9,15 @@ spec:
         database: mysql
     ports:
         - port: 3306
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+    name: retain-cata
+provisioner: local
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
