@@ -6,6 +6,6 @@ chmod +x configmapscript.sh
 eval $(minikube -p minikube docker-env)
 
 chmod +x images_files/create_images.sh
-./images_files/create_images.sh
+cd images_files && ./create_images.sh
 
-kubectl apply -f config_files
+cd .. && kubectl apply -f config_files
