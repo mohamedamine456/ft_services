@@ -29,8 +29,6 @@ kind: Deployment
 
 metadata:
     name: mysql-deployment
-    labels:
-        database: mysql
 spec:
     replicas: 1
     selector:
@@ -40,17 +38,17 @@ spec:
         metadata:
             labels:
                 database: mysql
-        spec:      
-            containers:
+        spec:
+            volumes:
+                - name: mysql-storage
+                  persistentVolumeClaim:
+                      claimName: mysql-pvc
+            containers: 
                 - name: image-mysql
                   image: image-mysql
                   imagePullPolicy: Never
                   ports:
                       - containerPort: 3306
                   volumeMounts:
-                      - name: mysql-storage
-                        mountPath: /var/lib/mysql
-            volumes:
-                - name: mysql-storage
-                  persistentVolumeClaim:
-                      claimName: mysql-pvc
+                    - name: mysql-storage
+                      mountPath: /var/lib/mysql

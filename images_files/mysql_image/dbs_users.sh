@@ -1,0 +1,11 @@
+mysql -u root -e "CREATE USER admin IDENTIFIED BY 'password';";
+mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO admin IDENTIFIED BY 'password';";
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS phpmyadmin;";
+mysql -u root -e "CREATE USER phpmyadmin IDENTIFIED BY 'password';";
+mysql -u root -e "GRANT ALL PRIVILEGES ON phpmyadmin.* TO phpmyadmin IDENTIFIED BY 'password';";
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS wordpress;";
+mysql -u root -e "CREATE USER wordpress IDENTIFIED BY 'password';";
+mysql -u root -e "GRANT ALL PRIVILEGES ON wordpress.* TO wordpress IDENTIFIED BY 'password';";
+mysql -u root -e "FLUSH PRIVILEGES;";
+mysql -u root < /wordpress.sql;
+mysql -u root < /create_tables.sql;

@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:16:29 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/01 09:00:50 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/05 12:03:05 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ COPY mariadb-server.cnf .
 COPY wordpress.sql .
 COPY create_tables.sql .
 COPY telegraf.conf .
+COPY dbs_users.sh .
 
 RUN sh install_script.sh
 
