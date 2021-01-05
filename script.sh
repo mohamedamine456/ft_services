@@ -5,12 +5,12 @@ then
 	export MINIKUBE_HOME=~/goinfre && minikube start
 fi
 
-#kubectl delete deployments --all
-#kubectl delete services --all
-#kubectl delete secrets --all
-#kubectl delete pv --all
-#kubectl delete pvc -all
-#kubectl delete pods --all
+kubectl delete services --all
+kubectl delete deployments --all
+kubectl delete pods --all
+kubectl delete secrets --all
+kubectl delete pv --all
+kubectl delete pvc -all
 
 sh configmapscript.sh
 
