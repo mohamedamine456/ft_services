@@ -42,10 +42,18 @@ spec:
             labels:
                 database: influxdb
         spec:
+            volumes:
+                - name: influxdb-storage
+                  persistentVolumeClaim:
+                      claimName: influxdb-pvc
             containers:
                 - name: image-influxdb
                   image: image-influxdb
                   imagePullPolicy: Never
                   ports:
                       - containerPort: 8086
+                  volumeMounts:
+                      - name: influxdb-storage
+                        mountPath: /var/lib/influxdb
+                        subPath: data
 
