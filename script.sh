@@ -3,9 +3,6 @@ MINIKUBE_STATUS=$(minikube status | head -n 1)
 if [ MINIKUBE_STATUS != "minikube" ]
 then
 	export MINIKUBE_HOME=~/goinfre && minikube start
-else
-	minikube delete && rm -rf /Users/mlachheb/goinfre/.minikube && sleep 10
-	export MINIKUBE_HOME=~/goinfre && minikube start
 fi
 
 #kubectl delete deployments --all
