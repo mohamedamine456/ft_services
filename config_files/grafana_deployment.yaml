@@ -43,7 +43,8 @@ spec:
         spec:
             volumes:
                 - name: grafana-storage
-                  claimName: grafana-storage
+                  persistentVolumeClaim:
+                      claimName: grafana-pvc
             containers:
                 - name: image-grafana
                   image: image-grafana

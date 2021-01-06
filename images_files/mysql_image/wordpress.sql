@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-service
--- Generation Time: Jan 06, 2021 at 07:48 AM
+-- Generation Time: Jan 06, 2021 at 10:13 AM
 -- Server version: 10.4.15-MariaDB
 -- PHP Version: 7.3.25
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `wordpress`
--- 
+--
 USE wordpress;
 -- --------------------------------------------------------
 
@@ -226,7 +226,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (118, 'widget_tag_cloud', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (119, 'widget_nav_menu', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (120, 'widget_custom_html', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
-(121, '_transient_doing_cron', '1609919261.0022559165954589843750', 'yes'),
+(121, '_transient_doing_cron', '1609928009.2716639041900634765625', 'yes'),
 (122, 'auth_key', '*G_`Qn]`P(nDjs[ufdxVeocfZ3xvhbDx ?`)SM]2RNMt0RSAHI%4uyIp+LaG <TN', 'no'),
 (123, 'auth_salt', 'p$UyC2OzbUm[*V%L=@.*;XCs<?CEky$c_+)X&18CxOVER/{P0+/&]b/:>4H8L`JD', 'no'),
 (124, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:57:\"https://downloads.wordpress.org/release/wordpress-5.6.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:57:\"https://downloads.wordpress.org/release/wordpress-5.6.zip\";s:10:\"no_content\";s:68:\"https://downloads.wordpress.org/release/wordpress-5.6-no-content.zip\";s:11:\"new_bundled\";s:69:\"https://downloads.wordpress.org/release/wordpress-5.6-new-bundled.zip\";s:7:\"partial\";s:0:\"\";s:8:\"rollback\";s:0:\"\";}s:7:\"current\";s:3:\"5.6\";s:7:\"version\";s:3:\"5.6\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.6\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1609918905;s:15:\"version_checked\";s:3:\"5.6\";s:12:\"translations\";a:0:{}}', 'no'),
@@ -533,9 +533,23 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13, 1, 'wp_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', ''),
 (15, 1, 'show_welcome_panel', '1'),
-(16, 1, 'session_tokens', 'a:1:{s:64:\"4e2198d1d6bde9c166b4764d2528b6e2dd207f7d1faae2319c476c3abb1dbdb9\";a:4:{s:10:\"expiration\";i:1610091704;s:2:\"ip\";s:10:\"172.17.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36\";s:5:\"login\";i:1609918904;}}'),
 (17, 1, 'wp_dashboard_quick_press_last_post_id', '4'),
-(18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:10:\"172.17.0.0\";}');
+(18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:10:\"172.17.0.0\";}'),
+(19, 1, 'session_tokens', 'a:1:{s:64:\"225c7c7a6edb28787c57a1254fe9705939cc27f6f9031b7c5dbf11a5172382ae\";a:4:{s:10:\"expiration\";i:1610100654;s:2:\"ip\";s:10:\"172.17.0.1\";s:2:\"ua\";s:120:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36\";s:5:\"login\";i:1609927854;}}'),
+(20, 2, 'nickname', 'eel-orch'),
+(21, 2, 'first_name', 'el mehdi'),
+(22, 2, 'last_name', 'el orchi'),
+(23, 2, 'description', ''),
+(24, 2, 'rich_editing', 'true'),
+(25, 2, 'syntax_highlighting', 'true'),
+(26, 2, 'comment_shortcuts', 'false'),
+(27, 2, 'admin_color', 'fresh'),
+(28, 2, 'use_ssl', '0'),
+(29, 2, 'show_admin_bar_front', 'true'),
+(30, 2, 'locale', ''),
+(31, 2, 'wp_capabilities', 'a:1:{s:10:\"subscriber\";b:1;}'),
+(32, 2, 'wp_user_level', '0'),
+(33, 2, 'dismissed_wp_pointers', '');
 
 -- --------------------------------------------------------
 
@@ -561,7 +575,8 @@ CREATE TABLE `wp_users` (
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'mlachheb', '$P$BsWO.j5RSrm/6davOUyMopxnm4jR5m0', 'mlachheb', 'aminelachheb456@gmail.com', 'http://192.168.99.100:5050', '2021-01-06 07:41:01', '', 0, 'mlachheb');
+(1, 'mlachheb', '$P$BsWO.j5RSrm/6davOUyMopxnm4jR5m0', 'mlachheb', 'aminelachheb456@gmail.com', 'http://192.168.99.100:5050', '2021-01-06 07:41:01', '', 0, 'mlachheb'),
+(2, 'eel-orch', '$P$BfsMj4cQJrJHIUgqaOhQCxJUzgOtC2/', 'eel-orch', 'eel-orch@student.1337.ma', 'http://port', '2021-01-06 10:12:27', '1609927947:$P$BoZ6fx1GpIb8koPBU6kAP/HB0eIuVs0', 0, 'el mehdi el orchi');
 
 --
 -- Indexes for dumped tables
@@ -729,13 +744,13 @@ ALTER TABLE `wp_term_taxonomy`
 -- AUTO_INCREMENT for table `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `wp_users`
 --
 ALTER TABLE `wp_users`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
