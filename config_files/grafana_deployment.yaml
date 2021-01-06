@@ -14,6 +14,18 @@ spec:
           targetPort: 3000
           protocol: TCP
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+
+metadata:
+    name: grafana-pvc
+spec:
+    accessModes:
+        - ReadWriteOnce
+    resources:
+        requests:
+            storage: 10Gi
+---
 apiVersion: apps/v1
 kind: Deployment
 
@@ -29,9 +41,16 @@ spec:
             labels:
                 app: grafana
         spec:
+            volumes:
+                - name: grafana-storage
+                  claimName: grafana-storage
             containers:
                 - name: image-grafana
                   image: image-grafana
                   imagePullPolicy: Never
                   ports:
                       - containerPort: 3000
+                  volumeMounts:
+                      - name: grafana-storage
+                        mountPath: /usr/share/grafana/
+                        subPath: data
