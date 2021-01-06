@@ -20,4 +20,4 @@ cd images_files && sh create_images.sh
 
 cd .. && kubectl apply -f config_files
 
-minikube dashboard
+sleep 10 && minikube dashboard
