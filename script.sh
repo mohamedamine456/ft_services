@@ -10,7 +10,7 @@ kubectl delete deployments --all
 kubectl delete pods --all
 kubectl delete secrets --all
 kubectl delete pv --all
-kubectl delete pvc -all
+kubectl delete pvc --all
 
 # SETUP METALLB (LOADBALANCER)
 

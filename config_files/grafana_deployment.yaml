@@ -41,17 +41,17 @@ spec:
             labels:
                 app: grafana
         spec:
-            volumes:
-                - name: grafana-storage
-                  persistentVolumeClaim:
-                      claimName: grafana-pvc
+            #volumes:
+            #- name: grafana-storage
+            #  persistentVolumeClaim:
+            #   claimName: grafana-pvc
             containers:
                 - name: image-grafana
                   image: image-grafana
                   imagePullPolicy: Never
                   ports:
                       - containerPort: 3000
-                  volumeMounts:
-                      - name: grafana-storage
-                        mountPath: /usr/share/grafana/
-                        subPath: data
+                        # volumeMounts:
+                        # - name: grafana-storage
+                        # mountPath: /usr/share/grafana/
+                        # subPath: data
