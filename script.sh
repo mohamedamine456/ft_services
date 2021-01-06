@@ -2,7 +2,7 @@ MINIKUBE_STATUS=$(minikube status | head -n 1)
 
 if [ MINIKUBE_STATUS != "minikube" ]
 then
-	export MINIKUBE_HOME=~/goinfre && minikube start
+	export MINIKUBE_HOME=~/goinfre && minikube start --driver=virtualbox
 fi
 
 kubectl delete services --all
@@ -11,6 +11,8 @@ kubectl delete pods --all
 kubectl delete secrets --all
 kubectl delete pv --all
 kubectl delete pvc --all
+
+sleep 20
 
 # SETUP METALLB (LOADBALANCER)
 
