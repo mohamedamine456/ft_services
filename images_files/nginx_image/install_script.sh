@@ -6,11 +6,17 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:08:21 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/01 08:43:26 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/06 10:32:55 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-apk add --no-cache nginx;
+apk add --no-cache openrc;
+
+rc-status -a;
+
+touch /run/openrc/softlevel;
+
+apk add --no-cache nginx openssh;
 
 adduser -D -g 'www' www;
 

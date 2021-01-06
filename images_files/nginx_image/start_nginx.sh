@@ -6,10 +6,10 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:10:27 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/01 08:43:15 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/06 10:34:28 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-nginx;
-telegraf -config /etc/telegraf.conf
-#tail -f /var/log/nginx/access.log
+rc-service nginx start;
+telegraf -config /etc/telegraf.conf > /dev/null &;
+tail -f /var/log/nginx/access.log
