@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:08:21 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/06 10:32:55 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/07 11:24:14 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ touch /run/openrc/softlevel;
 apk add --no-cache nginx openssh;
 
 adduser -D -g 'www' www;
+adduser -D -g 'mlachheb' mlachheb;
+echo mlachheb:password | chpasswd;
 
 mkdir /www;
 
