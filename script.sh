@@ -10,23 +10,17 @@ kubectl delete deployments --all
 kubectl delete pods --all
 kubectl delete secrets --all
 kubectl delete pv --all
-kubectl delete pvc --all
+
+MINIKUBEIP=$(minikube ip)
+
+echo "-----------$MINIKUBEIP-----------"
 
 # SETUP METALLB (LOADBALANCER)
 
-# see what changes would be made, returns nonzero returncode if different
-kubectl get configmap kube-proxy -n kube-system -o yaml | \
-sed -e "s/strictARP: false/strictARP: true/" | \
-kubectl diff -f - -n kube-system
-sleep 10
-# actually apply the changes, returns nonzero returncode on errors only
-kubectl get configmap kube-proxy -n kube-system -o yaml | \
-sed -e "s/strictARP: false/strictARP: true/" | \
-kubectl apply -f - -n kube-system
 # apply namespace and  deployment of metallb
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/namespace.yaml
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
-# On first install only (metellb secret0
+# On first install only (metellb secret)
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
 eval $(minikube -p minikube docker-env)
