@@ -11,9 +11,13 @@ kubectl delete pods --all
 kubectl delete secrets --all
 kubectl delete pv --all
 
-MINIKUBEIP=$(minikube ip)
+sleep 15
 
-echo "-----------$MINIKUBEIP-----------"
+#replace MINIKUBE IP WITH VALUES IN FILES
+
+sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./config_files/config.yaml
+sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./images_files/nginx_image/nginx.conf
+
 
 # SETUP METALLB (LOADBALANCER)
 

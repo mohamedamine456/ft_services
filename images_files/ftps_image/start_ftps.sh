@@ -1,3 +1,3 @@
-/etc/init.d/pure-ftpd start;
+rc-service pure-ftpd start
 
 tail -f /dev/null

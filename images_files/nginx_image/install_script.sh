@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:08:21 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/07 11:24:14 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/08 15:53:01 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ rc-status -a;
 
 touch /run/openrc/softlevel;
 
-apk add --no-cache nginx openssh;
+apk add --no-cache nginx openssh openssl;
 
 adduser -D -g 'www' www;
 adduser -D -g 'mlachheb' mlachheb;
@@ -34,5 +34,5 @@ mv nginx.conf /etc/nginx/nginx.conf;
 mv index.html /www/index.html;
 mv /telegraf.conf /etc/telegraf.conf
 
-mv /nginx-selfsigned.crt /etc/ssl/certs/nginx-selfsigned.crt;
-mv /nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key;
+openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -days 356 < /sslanswers.txt;
+
