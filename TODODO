@@ -1,5 +1,3 @@
 fix ftps the morning was working fine;
-try ssh with multi users
-add users to wordpress and fix css problem
 add user to influxdb
 see if pvc can work with grafana

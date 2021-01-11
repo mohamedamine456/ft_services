@@ -1,26 +1,26 @@
 apk update && apk upgrade;
 
-#apk add --no-cache openrc openssl;
+apk add --no-cache openrc openssl;
 
-#rc-status -a;
+rc-status -a;
 
-#touch /run/openrc/softlevel;
+touch /run/openrc/softlevel;
 
-#apk add pure-ftpd --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing;
+apk add pure-ftpd --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing;
 
-#adduser -D -g 'mlachheb' mlachheb;
+adduser -g 'mlachheb' mlachheb < /password.txt;
 
-#openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/private/pure-ftpd.pem -out /etc/ssl/private/pure-ftpd.pem -days 356 < /sslanswers.txt;
+openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/private/pure-ftpd.pem -out /etc/ssl/private/pure-ftpd.pem -days 356 < /sslanswers.txt;
 
-#chmod 600 /etc/ssl/private/pure-ftpd.pem;
+chmod 600 /etc/ssl/private/pure-ftpd.pem;
 
-#mv /pure-ftpd.conf /etc/pure-ftpd.conf;
-#mv /pure-ftpd /etc/conf.d/pure-ftpd;
+mv /pure-ftpd.conf /etc/pure-ftpd.conf;
+mv /pure-ftpd /etc/conf.d/pure-ftpd;
 
 mkdir /ftps-test;
 
-chown -R /ftps-test;
+chown -R mlachheb /ftps-test;
 
-#pure-pw useradd mlachheb -u mlachheb -d  /ftps-test < /password.txt;
+pure-pw useradd mlachheb -u mlachheb -d  /ftps-test < /password.txt;
 
-#pure-pw mkdb;
+pure-pw mkdb;

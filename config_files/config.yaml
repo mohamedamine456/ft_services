@@ -9,4 +9,4 @@ data:
             - name: default
               protocol: layer2
               addresses:
-                  - MINIKUBEIP-MINIKUBEIP
+                  - 192.168.99.113-192.168.99.113

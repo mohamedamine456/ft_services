@@ -1,3 +1,5 @@
+#! /bin/bash
+
 MINIKUBE_STATUS=$(minikube status | head -n 1)
 
 if [ MINIKUBE_STATUS != "minikube" ]
@@ -17,6 +19,7 @@ sleep 15
 
 sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./config_files/config.yaml
 sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./images_files/nginx_image/nginx.conf
+sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./images_files/mysql_image/wordpress.sql
 
 
 # SETUP METALLB (LOADBALANCER)
@@ -46,4 +49,11 @@ kubectl create -f config_files/phpmyadmin_deployment.yaml
 kubectl create -f config_files/wordpress_deployment.yaml
 kubectl create -f config_files/ftps_deployment.yaml
 
-sleep 10 && minikube dashboard
+sleep 10
+
+kubectl get pods
+kubectl get services
+
+sleep 5
+
+minikube dashboard
