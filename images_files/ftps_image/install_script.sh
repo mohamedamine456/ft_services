@@ -17,10 +17,6 @@ chmod 600 /etc/ssl/private/pure-ftpd.pem;
 mv /pure-ftpd.conf /etc/pure-ftpd.conf;
 mv /pure-ftpd /etc/conf.d/pure-ftpd;
 
-mkdir /ftps-test;
-
-chown -R mlachheb /ftps-test;
-
-pure-pw useradd mlachheb -u mlachheb -d  /ftps-test < /password.txt;
+pure-pw useradd mlachheb -u mlachheb -d  /home/mlachheb < /password.txt;
 
 pure-pw mkdb;
