@@ -9,6 +9,9 @@ spec:
         database: mysql
     ports:
         - port: 3306
+          targetPort: 3306
+          protocol: TCP
+          name: mysql
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
