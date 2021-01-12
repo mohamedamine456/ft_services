@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+ - name: 'InfluxDB_dashboard'
+   orgId: 1
+   folder: ''
+   folderUid: ''
+   type: file
+   allowUiUpdates: true
+   options:
+     path: /grafana/

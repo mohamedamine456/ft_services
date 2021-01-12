@@ -3,6 +3,11 @@ mkdir /grafana;
 # DASHBOARD JSON
 mv /grafana-dashboard.json /grafana/grafana-dashboard.json;
 mv /influxdb-dashboard.json /grafana/influxdb-dashboard.json;
+mv /mysql-dashboard.json /grafana/mysql-dashboard.json;
+mv /nginx-dashboard.json /grafana/nginx-dashboard.json;
+mv /phpmyadmin-dashboard.json /grafana/phpmyadmin-dashboard.json;
+mv /wordpress-dashboard.json /grafana/wordpress-dashboard.json;
+
 
 apk update;
 apk add grafana --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/;

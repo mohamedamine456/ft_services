@@ -13,6 +13,15 @@ spec:
         - port: 21
           targetPort: 21
           protocol: TCP
+          name: original
+        - port: 30001
+          targetPort: 30001
+          protocol: TCP
+          name: passive1
+        - port: 30002
+          targetPort: 30002
+          protocol: TCP
+          name: passive2
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -35,3 +44,5 @@ spec:
                   imagePullPolicy: Never
                   ports:
                       - containerPort: 21
+                      - containerPort: 30001
+                      - containerPort: 30002

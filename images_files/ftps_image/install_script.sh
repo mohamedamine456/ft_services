@@ -1,10 +1,6 @@
 apk update && apk upgrade;
 
-apk add --no-cache openrc openssl;
-
-rc-status -a;
-
-touch /run/openrc/softlevel;
+apk add --no-cache openssl;
 
 apk add pure-ftpd --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing;
 
@@ -14,9 +10,4 @@ openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/private/pure-ftpd.pem
 
 chmod 600 /etc/ssl/private/pure-ftpd.pem;
 
-mv /pure-ftpd.conf /etc/pure-ftpd.conf;
-mv /pure-ftpd /etc/conf.d/pure-ftpd;
-
 pure-pw useradd mlachheb -u mlachheb -d  /home/mlachheb < /password.txt;
-
-pure-pw mkdb;

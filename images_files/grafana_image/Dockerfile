@@ -3,22 +3,27 @@ FROM alpine
 COPY install_script.sh .
 COPY start_grafana.sh .
 COPY telegraf.conf .
-COPY grafana-datasource.yaml .
-COPY influxdb-datasource.yaml .
-COPY mysql-datasource.yaml .
-COPY nginx-datasource.yaml .
-COPY phpmyadmin-datasource.yaml .
-COPY wordpress-datasource.yaml .
 
-#COPY nginx-dashbord.yaml .
-#COPY mysql-dashboard.yaml .
-COPY grafana-dashboard.yaml .
-COPY influxdb-dashboard.yaml .
-#COPY phpmyadmin-dashbord.yaml .
-#COPY wordpress-dashboard.yaml .
+COPY datasources/grafana-datasource.yaml .
+COPY datasources/influxdb-datasource.yaml .
+COPY datasources/mysql-datasource.yaml .
+COPY datasources/nginx-datasource.yaml .
+COPY datasources/phpmyadmin-datasource.yaml .
+COPY datasources/wordpress-datasource.yaml .
 
-COPY influxdb-dashboard.json .
-COPY grafana-dashboard.json .
+COPY dashboards/nginx-dashboard.yaml .
+COPY dashboards/mysql-dashboard.yaml .
+COPY dashboards/grafana-dashboard.yaml .
+COPY dashboards/influxdb-dashboard.yaml .
+COPY dashboards/phpmyadmin-dashboard.yaml .
+COPY dashboards/wordpress-dashboard.yaml .
+
+COPY jsonfiles/influxdb-dashboard.json .
+COPY jsonfiles/grafana-dashboard.json .
+COPY jsonfiles/mysql-dashboard.json .
+COPY jsonfiles/nginx-dashboard.json .
+COPY jsonfiles/phpmyadmin-dashboard.json .
+COPY jsonfiles/wordpress-dashboard.json .
 
 RUN sh install_script.sh
 
