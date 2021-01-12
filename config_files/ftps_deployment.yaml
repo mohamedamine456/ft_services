@@ -19,7 +19,7 @@ spec:
           protocol: TCP
           name: pass1
         - port: 30002
-          tagertPort: 30002
+          targetPort: 30002
           protocol: TCP
           name: pass2
 ---

@@ -1,0 +1,12 @@
+# # config file version
+apiVersion: 1
+
+providers:
+ - name: 'Ftps_dashboard'
+   orgId: 1
+   folder: ''
+   folderUid: ''
+   type: file
+   allowUiUpdates: true
+   options:
+     path: /grafana/

@@ -1,5 +1,5 @@
-#rc-service pure-ftpd start
+pure-ftpd -P MINIKUBEIP -p 30001:30002 -j -Y 2 &
 
-pure-ftpd -P 192.168.99.117 -p 30001:30002 -j -Y 2 &
+telegraf -config /etc/telegraf.conf;
 
 tail -f /dev/null

@@ -2,6 +2,9 @@ apk update && apk upgrade;
 
 apk add --no-cache openssl;
 
+apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/;
+mv /telegraf.conf /etc/telegraf.conf;
+
 apk add pure-ftpd --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing;
 
 adduser -g 'mlachheb' mlachheb < /password.txt;
