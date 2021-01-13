@@ -14,3 +14,6 @@ openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/private/pure-ftpd.pem
 chmod 600 /etc/ssl/private/pure-ftpd.pem;
 
 pure-pw useradd mlachheb -u mlachheb -d  /home/mlachheb < /password.txt;
+
+mkdir /home/mlachheb/welcome_ftps;
+echo "HELLO WORLD! Welcome To mlachheb's FTPS" > /home/mlachheb/welcome_ftps/hello.txt;

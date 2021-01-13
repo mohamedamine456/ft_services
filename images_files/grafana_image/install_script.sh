@@ -32,3 +32,8 @@ mv /nginx-datasource.yaml /usr/share/grafana/conf/provisioning/datasources/nginx
 mv /phpmyadmin-datasource.yaml /usr/share/grafana/conf/provisioning/datasources/phpmyadmin-datasource.yaml;
 mv /wordpress-datasource.yaml /usr/share/grafana/conf/provisioning/datasources/wordpress-datasource.yaml;
 mv /ftps-datasource.yaml /usr/share/grafana/conf/provisioning/datasources/ftps-datasource.yaml;
+
+# PASSWORD CHANGE DISABLE CREATION OF ACCOUNT
+
+sed -i 's/admin_password = admin/admin_password = password/g' /usr/share/grafana/conf/defaults.ini;
+#sed -i 's/disable_initial_admin_creation = false/disable_initial_admin_creation = true/g' /usr/share/grafana/conf/defaults.ini;
