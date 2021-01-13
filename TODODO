@@ -1,1 +1,3 @@
-add user to influxdb
+update all users
+connect to influxdb only by a user
+livenessprobe to fix
