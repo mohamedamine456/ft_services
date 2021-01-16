@@ -6,11 +6,11 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:16:29 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/05 12:03:05 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/16 15:31:06 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM alpine
+FROM alpine:3.12
 
 COPY install_script.sh .
 COPY start_mysql.sh .
