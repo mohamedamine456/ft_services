@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.12
 
 COPY install_script.sh .
 COPY start_ftps.sh .

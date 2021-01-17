@@ -1,4 +1,4 @@
-pure-ftpd -P MINIKUBEIP -p 30001:30002 -j -Y 2 &
+#pure-ftpd -P 192.168.99.127 -p 30001:30002 -j -Y 2 &
 
 telegraf -config /etc/telegraf.conf;
 

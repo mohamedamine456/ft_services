@@ -1,1 +1,5 @@
-add user to influxdb
+update all users
+connect to influxdb only by a user
+livenessprobe to fix
+try vsftpd 
+pure_ftpd still upload not working

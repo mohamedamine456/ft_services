@@ -90,7 +90,7 @@
             [
               {
                 "params": [
-                  "usage_system"
+                  "usage_user"
                 ],
                 "type": "field"
               },
@@ -216,7 +216,7 @@
             [
               {
                 "params": [
-                  "active"
+                  "free"
                 ],
                 "type": "field"
               },
@@ -278,12 +278,12 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Ftps_dashboard",
-  "uid": "6soj03-Gk",
+  "uid": "AoV3kgfGz",
   "version": 1
 }
