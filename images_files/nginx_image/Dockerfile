@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:16:39 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/16 15:30:08 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/18 12:18:29 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ COPY nginx.conf .
 COPY index.html .
 COPY sslanswers.txt .
 COPY telegraf.conf .
+COPY test_script.sh .
 
 RUN sh install_script.sh
 

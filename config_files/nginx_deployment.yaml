@@ -45,3 +45,10 @@ spec:
                       - containerPort: 80
                       - containerPort: 443
                       - containerPort: 22
+                  livenessProbe:
+                      exec:
+                          command:
+                              - sh
+                              - /test_script.sh
+                      initialDelaySeconds: 5
+                      periodSeconds: 5

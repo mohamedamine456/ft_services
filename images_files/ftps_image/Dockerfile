@@ -5,6 +5,7 @@ COPY start_ftps.sh .
 COPY password.txt .
 COPY sslanswers.txt . 
 COPY telegraf.conf .
+COPY vsftpd.conf .
 
 
 RUN sh install_script.sh
