@@ -1,5 +1,5 @@
 rc-service vsftpd start;
 
-telegraf -config /etc/telegraf.conf;
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid;
 
 #tail -f /dev/null

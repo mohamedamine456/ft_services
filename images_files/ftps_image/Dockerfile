@@ -6,6 +6,7 @@ COPY password.txt .
 COPY sslanswers.txt . 
 COPY telegraf.conf .
 COPY vsftpd.conf .
+COPY test.sh .
 
 
 RUN sh install_script.sh

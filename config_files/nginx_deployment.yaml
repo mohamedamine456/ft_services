@@ -49,6 +49,6 @@ spec:
                       exec:
                           command:
                               - sh
-                              - /test_script.sh
+                              - /test.sh
                       initialDelaySeconds: 5
                       periodSeconds: 5

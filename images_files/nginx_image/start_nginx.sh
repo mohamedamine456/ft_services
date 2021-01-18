@@ -6,11 +6,11 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:10:27 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/13 10:22:45 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/18 15:54:49 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 rc-service nginx start;
 rc-service sshd start;
-telegraf -config /etc/telegraf.conf;
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid;
 #tail -f /var/log/nginx/access.log

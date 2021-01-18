@@ -6,6 +6,7 @@ COPY config.sample.inc.php .
 COPY nginx.conf .
 COPY www.conf .
 COPY telegraf.conf .
+COPY test.sh .
 
 RUN sh install_script.sh
 

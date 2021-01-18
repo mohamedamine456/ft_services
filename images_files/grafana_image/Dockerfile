@@ -3,6 +3,7 @@ FROM alpine:3.12
 COPY install_script.sh .
 COPY start_grafana.sh .
 COPY telegraf.conf .
+COPY test.sh .
 
 COPY datasources/grafana-datasource.yaml .
 COPY datasources/influxdb-datasource.yaml .

@@ -1,3 +1,3 @@
-influxd -config /etc/influxdb.conf &> /dev/null &
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null &
 
-telegraf --config /etc/telegraf.conf
+influxd -config /etc/influxdb.conf -pidfile /run/influxdb.pid;

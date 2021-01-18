@@ -20,7 +20,7 @@ sleep 15
 sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./config_files/config.yaml
 sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./images_files/nginx_image/nginx.conf
 sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./images_files/mysql_image/wordpress.sql
-sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./images_files/ftps_image/start_ftps.sh
+sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./images_files/ftps_image/vsftpd.conf
 
 
 # SETUP METALLB (LOADBALANCER)

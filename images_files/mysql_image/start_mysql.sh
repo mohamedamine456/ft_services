@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:29:27 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/05 17:49:23 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/18 16:25:28 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,4 +21,4 @@ else
 	sleep 10;
 	sh dbs_users.sh;
 fi
-telegraf -config /etc/telegraf.conf;
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid;
