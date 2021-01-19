@@ -36,13 +36,13 @@ eval $(minikube -p minikube docker-env)
 docker build -t image-ftps images_files/ftps_image/ --no-cache;
 docker build -t image-grafana images_files/grafana_image/  --no-cache;
 docker build -t image-influxdb images_files/influxdb_image/  --no-cache;
-#docker build -t image-mysql images_files/mysql_image/  --no-cache;
+docker build -t image-mysql images_files/mysql_image/  --no-cache;
 docker build -t image-nginx images_files/nginx_image/  --no-cache;
 docker build -t image-phpmyadmin images_files/phpmyadmin_image/  --no-cache;
 docker build -t image-wordpress images_files/wordpress_image/ --no-cache;
 
 kubectl create -f config_files/config.yaml
-#kubectl create -f config_files/mysql_deployment.yaml
+kubectl create -f config_files/mysql_deployment.yaml
 kubectl create -f config_files/nginx_deployment.yaml
 kubectl create -f config_files/influxdb_deployment.yaml
 kubectl create -f config_files/grafana_deployment.yaml
