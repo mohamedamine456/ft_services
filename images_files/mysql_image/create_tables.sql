@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `pma__bookmark` (
 
 -- --------------------------------------------------------
 
+
 --
 -- Table structure for table `pma__column_info`
 --

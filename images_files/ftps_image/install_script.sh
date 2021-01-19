@@ -21,4 +21,4 @@ chmod 600 /etc/ssl/private/vsftpd.pem;
 mkdir /home/mlachheb/welcome_ftps;
 echo "HELLO WORLD! Welcome To mlachheb's FTPS" > /home/mlachheb/welcome_ftps/hello.txt;
 
-chown -R /home/mlachheb/welcome_ftps;
+chown -R mlachheb /home/mlachheb/welcome_ftps;
