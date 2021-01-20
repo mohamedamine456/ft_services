@@ -4,14 +4,6 @@ apk update;
 
 mkdir /www;
 
-# OPENRC
-
-apk add --no-cache openrc;
-
-rc-status -a;
-
-touch /run/openrc/softlevel;
-
 # NGINX
 
 apk add --no-cache nginx;

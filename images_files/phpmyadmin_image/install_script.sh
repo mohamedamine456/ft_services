@@ -4,14 +4,6 @@ apk update;
 
 mkdir /www;
 
-#OPENRC
-
-apk add --update --no-cache openrc;
-
-rc-status -a;
-
-touch /run/openrc/softlevel;
-
 # NGINX
 
 apk add --no-cache nginx;
@@ -52,5 +44,3 @@ mkdir -m 777 /www/phpmyadmin/tmp;
 cd /;
 
 mv /telegraf.conf /etc/telegraf.conf;
-#start mariadb in the other service and apply this command
-#mysql -u root < /www/phpmyadmin/sql/create_tables.sql;
