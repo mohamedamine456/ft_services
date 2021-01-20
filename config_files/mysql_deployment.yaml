@@ -25,7 +25,7 @@ spec:
         - ReadWriteOnce
     resources:
         requests:
-            storage: 10Gi
+            storage: 5Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -55,7 +55,7 @@ spec:
                   volumeMounts:
                     - name: mysql-storage
                       mountPath: /var/lib/mysql
-                      livenessProbe:
+                  livenessProbe:
                       exec:
                           command:
                               - sh
