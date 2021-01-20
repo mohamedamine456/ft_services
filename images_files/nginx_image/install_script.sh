@@ -6,15 +6,9 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:08:21 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/20 12:28:10 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/20 18:14:55 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-apk add --no-cache openrc;
-
-rc-status -a;
-
-touch /run/openrc/softlevel;
 
 apk add --no-cache nginx openssh openssl;
 
@@ -36,3 +30,4 @@ mv /telegraf.conf /etc/telegraf.conf;
 
 openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -days 356 < /sslanswers.txt;
 
+ssh-keygen -A;
