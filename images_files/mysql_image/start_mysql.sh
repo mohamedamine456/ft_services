@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:29:27 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/19 16:57:46 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/20 09:21:41 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,19 +16,19 @@ WPDIR="/var/lib/mysql/wordpress"
 
 if [ -d "$MYSQLDIR" ]
 then
-	echo "setup already done"
+	echo "setup already done!"
 else
-	mkdir /run/mysqld;
-	mysql_install_db --user=root --basedir=/usr --datadir=/var/lib/mysql;
+	/etc/init.d/mariadb setup;
+	sleep 5;
 fi
+
+/etc/init.d/mariadb start;
+sleep 10;
 
 if [ -d "$PMADIR" -a -d "$WPDIR" ]
 then
-	usr/bin/mysqld --datadir='/var/lib/mysql' -u root &> /dev/null &
-	sleep 10;
+	echo "databases already there!"
 else
-	usr/bin/mysqld --datadir='/var/lib/mysql' -u root &> /dev/null &
-	sleep 10;
 	sh dbs_users.sh;
 fi
 telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid;
