@@ -1,9 +1,5 @@
 apk update && apk upgrade;
 
-apk add --no-cache openrc;
-rc-status -a;
-touch /run/openrc/softlevel;
-
 apk add --no-cache openssl;
 
 apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/;
