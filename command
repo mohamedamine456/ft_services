@@ -24,3 +24,13 @@ influxd -config /etc/influxdb.conf -pidfile /run/influxdb.pid
 php-fpm7
 
 
+
+
+CHAR="$(ps)"
+
+if [[ "$CHAR" =~ "vsftpd" ]];
+then
+	echo yes
+else
+	echo no
+fi
