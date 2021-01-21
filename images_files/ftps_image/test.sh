@@ -1,7 +1,6 @@
-VSFTPFILE=/run/vsftpd.pid
-TELEGRAFFILE=/run/telegraf.pid
+TEST=$(ps | grep -c vsftpd)
 
-if [ -f "$VSFTPFILE" -a -f "$TELEGRAFFILE" ]
+if [ $TEST -eq 2 ]
 then
 	return 0
 else

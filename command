@@ -26,11 +26,20 @@ php-fpm7
 
 
 
-CHAR="$(ps)"
+PS="$(ps)"
 
-if [[ "$CHAR" =~ "vsftpd" ]];
+if [[ "$PS" =~ "vsftpd" ]];
 then
-	echo yes
+	return 0
 else
-	echo no
+	return 1
+fi
+
+TEST=$(ps | grep -c vsftpd)
+
+if [ $TEST -eq 2 ]
+then
+	return 0
+else
+	return 1
 fi
