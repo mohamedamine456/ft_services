@@ -56,11 +56,11 @@ spec:
                       - name: influxdb-storage
                         mountPath: /var/lib/influxdb
                         subPath: data
-                  livenessProbe:
-                      exec:
-                          command:
-                              - sh
-                              - /test.sh
-                      initialDelaySeconds: 60
-                      periodSeconds: 5
+                        #livenessProbe:
+                        #exec:
+                        #command:
+                        #- sh
+                        #- /test.sh
+                        #initialDelaySeconds: 60
+                        #periodSeconds: 5
 
