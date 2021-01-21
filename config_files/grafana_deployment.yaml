@@ -35,10 +35,10 @@ spec:
                   imagePullPolicy: Never
                   ports:
                       - containerPort: 3000
-                  livenessProbe:
-                      exec:
-                          command:
-                              - sh
-                              - /test.sh
-                      initialDelaySeconds: 30
-                      periodSeconds: 30
+                        #livenessProbe:
+                        #exec:
+                        #command:
+                        #     - sh
+                        #     - /test.sh
+                        #initialDelaySeconds: 60
+                        #periodSeconds: 5
