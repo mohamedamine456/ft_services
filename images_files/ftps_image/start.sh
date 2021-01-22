@@ -6,12 +6,14 @@ sleep 5
 
 while true
 do
-	TESTFTPS=$(ps | grep -v grep | grep -c vsftpd)
-	TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
+	ps | grep -v grep | grep -c vsftpd
+	TESTFTPS=$?
+	ps | grep -v grep | grep -c telegraf
+	TESTTELEGRAF=$?
 
-	if [ $TESTFTPS -eq 1 ]
+	if [ $TESTFTPS -eq 0 ]
 	then
-		if [ $TESTTELEGRAF -eq 1 ]
+		if [ $TESTTELEGRAF -eq 0 ]
 		then
 			echo "FTPS TELEGRAF DOIND GOOD"
 			sleep 2

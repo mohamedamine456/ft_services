@@ -1,11 +1,6 @@
-#/usr/sbin/nginx -c /etc/nginx/nginx.conf;
-#/usr/sbin/sshd -D&
-#telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null;
-#tail -f /var/log/nginx/access.log
-
 #! /bin/sh
 
-/usr/sbin/nginx -c /etc/nginx/nginx.conf
+/usr/sbin/nginx -c /etc/nginx/nginx.conf -g "daemon off;" &> /dev/null &
 /usr/sbin/sshd -D&
 telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null &
 
@@ -13,28 +8,34 @@ sleep 5
 
 while true
 do
-	TESTNGINX=$(ps | grep -v grep | grep -c nginx)
-	TESTSSH=$(ps | grep -v grep | grep -c ssh)
-	TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
+	NOW=`date +"%D %T"`
+	ps | grep -v grep | grep nginx
+	TESTNGINX=$?
+	ps | grep -v grep | grep ssh
+	TESTSSH=$?
+	ps | grep -v grep | grep telegraf
+	TESTTELEGRAF=$?
 
-	if [ $TESTNGINX -eq 3 ]
+	if [ $TESTNGINX -eq 0 ]
 	then
-		if [ $TESTSSH -eq 1 ]
+		if [ $TESTSSH -eq 0 ]
 		then
-			if [ $TESTTELEGRAF -eq 1 ]
+			if [ $TESTTELEGRAF -eq 0 ]
 			then
-				echo "NGINX SSH TELEGRAF DOIND GOOD"
-				sleep 2
+				echo "$NOW: NGINX WORKING!"
+				echo "$NOW: SSH WORKING!"
+				echo "$NOW: TELEGRAF WORKING!\n"
+				sleep 5
 			else
-				echo "TELEGRAF DOWN"
+				echo "$NOW: TELEGRAF DOWN!"
 				break
 			fi
 		else
-			echo "SSHD WOEN"
+			echo "$NOW: SSH DOWN"
 			break
 		fi
 	else
-		echo "NGINX DOWN"
+		echo "$NOW: NGINX DOWN"
 		break
 	fi
 done

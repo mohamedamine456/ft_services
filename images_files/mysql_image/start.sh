@@ -25,15 +25,16 @@ sleep 5
 
 while true
 do
-	TESTMYSQL=$(ps | grep -v grep | grep -c mysql)
-	TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
-
-	if [ $TESTMYSQL -eq 1 ]
+	ps | grep -v grep | grep -c mysql
+	TESTMYSQL=$?
+	ps | grep -v grep | grep -c telegraf
+	TESTTELEGRAF=$?
+	if [ $TESTMYSQL -eq 0 ]
 	then
-		if [ $TESTTELEGRAF -eq 1 ]
+		if [ $TESTTELEGRAF -eq 0 ]
 		then
 			echo "MYSQL TELEGRAF DOING GOOD"
-			sleep 2
+			sleep 5
 		else
 			echo "TELEGRAF DOWN"
 			break
