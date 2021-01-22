@@ -1,24 +1,31 @@
 php-fpm7 --pid /run/php-fpm.pid;
 /usr/sbin/nginx -c /etc/nginx/nginx.conf;
-telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null &
 
-TESTNGINX=$(ps | grep -v grep | grep -c nginx)
-TESTPMA=$(ps | grep -v grep | grep -c php-fpm)
-TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
+while true
+do
+	TESTNGINX=$(ps | grep -v grep | grep -c nginx)
+	TESTPMA=$(ps | grep -v grep | grep -c php-fpm)
+	TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
 
-if [ $TESTNGINX -eq 3 ]
-then
-	if [ $TESTPMA -eq 3 ]
+	if [ $TESTNGINX -eq 3 ]
 	then
-		if [ $TESTTELEGRAF -eq 1 ]
+		if [ $TESTPMA -eq 3 ]
 		then
-			return 0
+			if [ $TESTTELEGRAF -eq 1 ]
+			then
+				echo "NGINX PHP TELEGRAF DOING GOOD"
+				sleep 2
+			else
+				echo "TELEGRAF DOWN"
+				break
+			fi
 		else
-			return 1
+			echo "PHP DOWN"
+			break
 		fi
 	else
-		return 0
+		echo "NGINX DOWN"
+		break
 	fi
-else
-	return 1
-fi
+done

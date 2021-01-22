@@ -2,20 +2,23 @@ telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null &
 
 influxd -config /etc/influxdb.conf -pidfile /run/influxdb.pid &> /dev/null &
 
-tail -f /dev/null
+while true
+do
+	TESTINFLUXDB=$(ps | grep -v grep | grep -c influx)
+	TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
 
-
-TESTINFLUXDB=$(ps | grep -v grep | grep -c influx)
-TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
-
-if [ $TESTINFLUXDB -eq 1 ]
-then
-	if [ $TESTTELEGRAF -eq 1 ]
+	if [ $TESTINFLUXDB -eq 1 ]
 	then
-		return 0
+		if [ $TESTTELEGRAF -eq 1 ]
+		then
+			echo "INFLUXDB TELEGRAF DOING GOOD"
+			sleep 2
+		else
+			echo "TELEGRAF DOWN"
+			break
+		fi
 	else
-		return 1
+		echo "INFLUXDB DOWN"
+		break
 	fi
-else
-	return 1
-fi
+done

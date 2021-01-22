@@ -9,31 +9,32 @@
 /usr/sbin/sshd -D&
 telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null &
 
-sleep 5;
+sleep 5
 
 while true
 do
 	TESTNGINX=$(ps | grep -v grep | grep -c nginx)
 	TESTSSH=$(ps | grep -v grep | grep -c ssh)
 	TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
+
 	if [ $TESTNGINX -eq 3 ]
 	then
 		if [ $TESTSSH -eq 1 ]
 		then
 			if [ $TESTTELEGRAF -eq 1 ]
 			then
-				echo "all right"
+				echo "NGINX SSH TELEGRAF DOIND GOOD"
 				sleep 2
 			else
-				echo "telegraf down"
+				echo "TELEGRAF DOWN"
 				break
 			fi
 		else
-			echo "ssh down"
+			echo "SSHD WOEN"
 			break
 		fi
 	else
-		echo "nginx down"
+		echo "NGINX DOWN"
 		break
 	fi
 done

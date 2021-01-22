@@ -1,14 +1,26 @@
 /usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf &> /dev/null &
 
-telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid;
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null &
 
-#tail -f /dev/null
+sleep 5
 
-TEST=$(ps | grep -c vsftpd)
+while true
+do
+	TESTFTPS=$(ps | grep -v grep | grep -c vsftpd)
+	TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
 
-if [ $TEST -eq 2 ]
-then
-	return 0
-else
-	return 1
-fi
+	if [ $TESTFTPS -eq 1 ]
+	then
+		if [ $TESTTELEGRAF -eq 1 ]
+		then
+			echo "FTPS TELEGRAF DOIND GOOD"
+			sleep 2
+		else
+			echo "TELEGRAF DOWN"
+			break
+		fi
+	else
+		echo "FTPS DOWN"
+		break
+	fi
+done
