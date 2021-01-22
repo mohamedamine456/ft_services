@@ -6,6 +6,7 @@ COPY nginx.conf .
 COPY www.conf .
 COPY wp-config.php .
 COPY telegraf.conf .
+COPY test.sh .
 
 RUN sh install_script.sh
 

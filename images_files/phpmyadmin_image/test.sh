@@ -1,10 +1,10 @@
 #! /bin/sh
 
-ps | grep -v grep | grep -c nginx
+ps | grep -v grep | grep nginx
 TESTNGINX=$?
-ps | grep -v grep | grep -c php-fpm
+ps | grep -v grep | grep php-fpm
 TESTPMA=$?
-ps | grep -v grep | grep -c telegraf
+ps | grep -v grep | grep telegraf
 TESTTELEGRAF=$?
 
 if [ $TESTNGINX -eq 0 ]

@@ -19,28 +19,28 @@ else
 	sleep 5;
 	sh dbs_users.sh;
 fi
-telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null &
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid
 
-sleep 5
+#sleep 5
 
-while true
-do
-	ps | grep -v grep | grep -c mysql
-	TESTMYSQL=$?
-	ps | grep -v grep | grep -c telegraf
-	TESTTELEGRAF=$?
-	if [ $TESTMYSQL -eq 0 ]
-	then
-		if [ $TESTTELEGRAF -eq 0 ]
-		then
-			echo "MYSQL TELEGRAF DOING GOOD"
-			sleep 5
-		else
-			echo "TELEGRAF DOWN"
-			break
-		fi
-	else
-		echo "MYSQL DOWN"
-		break
-	fi
-done
+#while true
+#do
+#	ps | grep -v grep | grep -c mysql
+#	TESTMYSQL=$?
+#	ps | grep -v grep | grep -c telegraf
+#	TESTTELEGRAF=$?
+#	if [ $TESTMYSQL -eq 0 ]
+#	then
+#		if [ $TESTTELEGRAF -eq 0 ]
+#		then
+#			echo "MYSQL TELEGRAF DOING GOOD"
+#			sleep 5
+#		else
+#			echo "TELEGRAF DOWN"
+#			break
+#		fi
+#	else
+#		echo "MYSQL DOWN"
+#		break
+#	fi
+#done

@@ -6,7 +6,7 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:16:29 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/22 10:02:02 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/22 17:49:05 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ COPY wordpress.sql .
 COPY create_tables.sql .
 COPY telegraf.conf .
 COPY dbs_users.sh .
+COPY test.sh .
 
 RUN sh install_script.sh
 

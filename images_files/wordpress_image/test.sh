@@ -1,19 +1,24 @@
-TESTNGINX=$(ps | grep -v grep | grep -c nginx)
-TESTPMA=$(ps | grep -v grep | grep -c php-fpm)
-TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
+#! /bin/sh
 
-if [ $TESTNGINX -eq 3 ]
+ps | grep -v grep | grep nginx
+TESTNGINX=$?
+ps | grep -v grep | grep php-fpm
+TESTPMA=$?
+ps | grep -v grep | grep telegraf
+TESTTELEGRAF=$?
+
+if [ $TESTNGINX -eq 0 ]
 then
-	if [ $TESTPMA -eq 3 ]
+	if [ $TESTPMA -eq 0 ]
 	then
-		if [ $TESTTELEGRAF -eq 1 ]
+		if [ $TESTTELEGRAF -eq 0 ]
 		then
 			return 0
 		else
 			return 1
 		fi
 	else
-		return 0
+		return 1
 	fi
 else
 	return 1
