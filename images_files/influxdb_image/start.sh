@@ -1,3 +1,10 @@
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid &> /dev/null &
+
+influxd -config /etc/influxdb.conf -pidfile /run/influxdb.pid &> /dev/null &
+
+tail -f /dev/null
+
+
 TESTINFLUXDB=$(ps | grep -v grep | grep -c influx)
 TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)
 

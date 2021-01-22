@@ -55,10 +55,3 @@ spec:
                   volumeMounts:
                     - name: mysql-storage
                       mountPath: /var/lib/mysql
-                      #livenessProbe:
-                      #exec:
-                      #command:
-                      #- sh
-                      #- /test.sh
-                      #initialDelaySeconds: 60
-                      #periodSeconds: 5

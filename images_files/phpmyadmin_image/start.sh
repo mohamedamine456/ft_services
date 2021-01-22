@@ -1,3 +1,7 @@
+php-fpm7 --pid /run/php-fpm.pid;
+/usr/sbin/nginx -c /etc/nginx/nginx.conf;
+telegraf -config /etc/telegraf.conf -pidfile /run/telegraf.pid
+
 TESTNGINX=$(ps | grep -v grep | grep -c nginx)
 TESTPMA=$(ps | grep -v grep | grep -c php-fpm)
 TESTTELEGRAF=$(ps | grep -v grep | grep -c telegraf)

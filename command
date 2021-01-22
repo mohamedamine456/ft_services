@@ -24,6 +24,8 @@ influxd -config /etc/influxdb.conf -pidfile /run/influxdb.pid
 php-fpm7
 
 
+# supervisor
+{supervisord} /usr/bin/python3 /usr/bin/supervisord --nodaemon --pidfile /var/run/supervisord.pid --configuration /etc/supervisord.conf
 
 
 PS="$(ps)"
