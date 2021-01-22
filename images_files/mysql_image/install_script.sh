@@ -6,17 +6,12 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/22 14:22:06 by mlachheb          #+#    #+#              #
-#    Updated: 2021/01/20 18:08:23 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/01/22 12:33:19 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 apk update;
 
-apk add openrc --no-cache;
-
-rc-status -a;
-
-touch /run/openrc/softlevel;
 
 apk add mysql mysql-client;
 apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/;
