@@ -9,3 +9,4 @@ mysql -u root -e "GRANT ALL PRIVILEGES ON wordpress.* TO wordpress IDENTIFIED BY
 mysql -u root -e "FLUSH PRIVILEGES;";
 mysql -u root < /wordpress.sql;
 mysql -u root < /create_tables.sql;
+echo "databases & users created";
