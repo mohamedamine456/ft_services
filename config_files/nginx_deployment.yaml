@@ -51,4 +51,4 @@ spec:
                               - sh
                               - /test.sh
                       initialDelaySeconds: 5
-                      periodSeconds: 5
+                      periodSeconds: 30
