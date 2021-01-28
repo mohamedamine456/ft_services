@@ -19,8 +19,6 @@ else
 	usr/bin/mysqld --datadir='/var/lib/mysql' -u root &> /dev/null &
 	sleep 5;
 	sh dbs_users.sh;
-	pkill mysqld;
-	usr/bin/mysqld --datadir='/var/lib/mysql' -u root &> /dev/null &
 fi
 
 tail -f /dev/null
