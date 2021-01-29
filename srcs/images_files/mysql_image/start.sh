@@ -14,9 +14,9 @@ fi
 
 if [ -d "$PMADIR" -a -d "$WPDIR" ]
 then
-	usr/bin/mysqld --datadir='/var/lib/mysql' -u root &> /dev/null &
+	/usr/bin/mysqld --datadir='/var/lib/mysql' --user=root &> /dev/null &
 else
-	usr/bin/mysqld --datadir='/var/lib/mysql' -u root &> /dev/null &
+	/usr/bin/mysqld --datadir='/var/lib/mysql' --user=root &> /dev/null &
 	sleep 5;
 	sh dbs_users.sh;
 fi
