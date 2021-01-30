@@ -5,6 +5,10 @@ MINIKUBE_STATUS=$(minikube status | head -n 1)
 if [ MINIKUBE_STATUS != "minikube" ]
 then
 	export MINIKUBE_HOME=~/goinfre && minikube start --driver=virtualbox
+	sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./srcs/config_files/config.yaml
+	sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./srcs/images_files/nginx_image/nginx.conf
+	sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./srcs/images_files/mysql_image/wordpress.sql
+	sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./srcs/images_files/ftps_image/vsftpd.conf
 fi
 
 kubectl delete services --all
@@ -16,11 +20,6 @@ kubectl delete pv --all
 sleep 15
 
 #replace MINIKUBE IP WITH VALUES IN FILES
-
-sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./srcs/config_files/config.yaml
-sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./srcs/images_files/nginx_image/nginx.conf
-sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./srcs/images_files/mysql_image/wordpress.sql
-sed -i '' "s/MINIKUBEIP/$(minikube ip)/g" ./srcs/images_files/ftps_image/vsftpd.conf
 
 
 # SETUP METALLB (LOADBALANCER)
